@@ -1,0 +1,1 @@
+#include "Laba12.h"
