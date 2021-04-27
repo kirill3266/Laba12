@@ -13,6 +13,8 @@ public:
 	IntModulo(IntModulo&);
 	IntModulo(int n);
 	~IntModulo();
+	void input(int n);
+	void output();
 	unsigned getModulo();
 	unsigned setModulo(int n);
 };
