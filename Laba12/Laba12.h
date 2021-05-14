@@ -6,14 +6,18 @@ using namespace std;
 
 class IntModulo
 {
+private:
 	unsigned modulo;
 public:
 	IntModulo& operator=(const IntModulo& right);
+	IntModulo& operator+=(const IntModulo& right);
+	IntModulo& operator-=(const IntModulo& right);
+	IntModulo& operator*=(const IntModulo& right);
+	friend ostream& operator<<(ostream& out, const IntModulo& right);
 	IntModulo();
-	IntModulo(IntModulo&);
 	IntModulo(int n);
 	~IntModulo();
-	void input(int n);
+	void input();
 	void output();
 	unsigned getModulo();
 	unsigned setModulo(int n);

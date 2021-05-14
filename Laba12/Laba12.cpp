@@ -8,6 +8,27 @@ IntModulo& IntModulo::operator=(const IntModulo& right) {
 	return *this;
 }
 
+IntModulo& IntModulo::operator-=(const IntModulo& right) {
+	modulo -= right.modulo;
+	return *this;
+}
+
+IntModulo& IntModulo::operator*=(const IntModulo& right) {
+	modulo *= right.modulo;
+	return *this;
+}
+
+ostream& operator<<(ostream &out,const IntModulo& right)
+{
+	out << right.modulo;
+	return out;
+}
+
+IntModulo& IntModulo::operator+=(const IntModulo& right) {
+	modulo += right.modulo;
+	return *this;
+}
+
 IntModulo::IntModulo()
 {
 	modulo = 0;
@@ -18,8 +39,10 @@ IntModulo::IntModulo(int n)
 	IntModulo::setModulo(n);
 }
 
-void IntModulo::input(int n){
+void IntModulo::input(){
 	cout << "Vvedite modul" << endl;
+	int n = 0;
+	cin >> n;
 	IntModulo::setModulo(n);
 }
 
