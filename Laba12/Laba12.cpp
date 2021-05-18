@@ -4,64 +4,73 @@ IntModulo& IntModulo::operator=(const IntModulo& right) {
 	if (this == &right) {
 		return *this;
 	}
+	val = right.val;
 	modulo = right.modulo;
 	return *this;
 }
 
-IntModulo& IntModulo::operator-(const IntModulo& right) {
-	modulo -= right.modulo;
-	return *this;
+IntModulo IntModulo::operator-(const IntModulo& right) const {
+	unique_ptr<IntModulo> a(new IntModulo(val - right.val));
+	return *a;
 }
 
-IntModulo& IntModulo::operator*(const IntModulo& right) {
-	modulo *= right.modulo;
-	return *this;
+IntModulo IntModulo::operator*(const IntModulo& right) const {
+	unique_ptr<IntModulo> a(new IntModulo(val * right.val));
+	return IntModulo(*a);
 }
 
 ostream& operator<<(ostream &out,const IntModulo& right)
 {
-	out << right.modulo;
+	out << right.val;
 	return out;
 }
 
-IntModulo& IntModulo::operator+(const IntModulo& right) {
-	modulo += right.modulo;
-	return *this;
+IntModulo IntModulo::operator+(const IntModulo& right) const {
+	unique_ptr<IntModulo> a(new IntModulo(val + right.val));
+	return *a;
 }
 
 IntModulo::IntModulo()
 {
-	modulo = 0;
+	modulo = 7;
+	cout << "Your modulo is:" << modulo << "\n";
+	val = 0;
 }
 
 IntModulo::IntModulo(int n)
 {
-	IntModulo::setModulo(n);
+	modulo = 7;
+	cout << "Your modulo is:" << modulo << "\n";
+	setVal(n);
 }
 
+IntModulo::IntModulo(const IntModulo& right) {
+	val = right.val;
+	modulo = right.modulo;
+}
+
+
 void IntModulo::input(){
-	cout << "Vvedite modul" << endl;
+	cout << "Vvedite val" << endl;
 	int n = 0;
 	cin >> n;
-	IntModulo::setModulo(n);
+	setVal(n);
 }
 
 void IntModulo::output() {
-	cout << "Modul is: " << IntModulo::getModulo() << endl;
+	cout << "Modul is: " << IntModulo::getVal() << endl;
 }
 
-unsigned IntModulo::setModulo(int n) {
-	if (n <= 0 && n != 1) {
-		cout << "Wrong module!Module has been set to default value" << endl;
-		modulo = 0;
-		return 0;
-	}
-	modulo = n;
+void IntModulo::setVal(int n) {
+	if (n < 0)
+		while (n < 0) n += modulo;
+	else if (n >= modulo) n %= (int)modulo;
+	val = n;
 }
 
-unsigned IntModulo::getModulo()
+int IntModulo::getVal()
 {
-	return modulo;
+	return val;
 }
 
 IntModulo::~IntModulo()

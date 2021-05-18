@@ -5,13 +5,14 @@ int main() {
 	cout << "firstModulo is: " << firstModulo << endl;
 	firstModulo.input();
 	cout << "firstModulo is: " << firstModulo << endl;
-	firstModulo.setModulo(5);
+	firstModulo.setVal(13);
 	cout << "NewfirstModulo is: " << firstModulo << endl;
 	IntModulo secondModulo =  firstModulo;
 	cout << "secondModulo is: " << secondModulo << endl;
+	firstModulo.setVal(2);
 	secondModulo = firstModulo;
 	cout << "CopiedsecondModulo is: " << secondModulo << endl;
-	secondModulo.setModulo(8);
+	secondModulo.setVal(8);
 	cout << "AgainseconfModulo is: " << secondModulo << endl;
 	IntModulo thirdModulo = firstModulo + secondModulo;
 	cout << "First SumModulo: " << thirdModulo << "\n";
