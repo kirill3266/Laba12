@@ -8,12 +8,12 @@ IntModulo& IntModulo::operator=(const IntModulo& right) {
 	return *this;
 }
 
-IntModulo& IntModulo::operator-=(const IntModulo& right) {
+IntModulo& IntModulo::operator-(const IntModulo& right) {
 	modulo -= right.modulo;
 	return *this;
 }
 
-IntModulo& IntModulo::operator*=(const IntModulo& right) {
+IntModulo& IntModulo::operator*(const IntModulo& right) {
 	modulo *= right.modulo;
 	return *this;
 }
@@ -24,7 +24,7 @@ ostream& operator<<(ostream &out,const IntModulo& right)
 	return out;
 }
 
-IntModulo& IntModulo::operator+=(const IntModulo& right) {
+IntModulo& IntModulo::operator+(const IntModulo& right) {
 	modulo += right.modulo;
 	return *this;
 }

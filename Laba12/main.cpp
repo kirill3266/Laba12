@@ -13,7 +13,7 @@ int main() {
 	cout << "CopiedsecondModulo is: " << secondModulo << endl;
 	secondModulo.setModulo(8);
 	cout << "AgainseconfModulo is: " << secondModulo << endl;
-	firstModulo += secondModulo;
-	cout << "First SumModulo: " << firstModulo << "\n";
+	IntModulo thirdModulo = firstModulo + secondModulo;
+	cout << "First SumModulo: " << thirdModulo << "\n";
 	return 0;
 }

@@ -10,9 +10,9 @@ private:
 	unsigned modulo;
 public:
 	IntModulo& operator=(const IntModulo& right);
-	IntModulo& operator+=(const IntModulo& right);
-	IntModulo& operator-=(const IntModulo& right);
-	IntModulo& operator*=(const IntModulo& right);
+	IntModulo& operator+(const IntModulo& right);
+	IntModulo& operator-(const IntModulo& right);
+	IntModulo& operator*(const IntModulo& right);
 	friend ostream& operator<<(ostream& out, const IntModulo& right);
 	IntModulo();
 	IntModulo(int n);
